@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     user = User.create(user_params)
     if user.valid?
       session[:user_id] = user.id
-      return redirect_to '/bright_ideas'
+      return redirect_to '/'
     else
       flash[:errors] = user.errors.full_messages
       return redirect_to :back
@@ -25,6 +25,6 @@ class UsersController < ApplicationController
     end
 
     def auth
-      return redirect_to '/bright_ideas' unless session[:user_id].to_s == params[:id]
+      return redirect_to '/ideas' unless session[:user_id].to_s == params[:id]
     end
 end

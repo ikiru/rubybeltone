@@ -1,13 +1,13 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:create]
+  # skip_before_action :require_login, only: [:create]
 
 def create
     user = User.find_by_email(params[:email]).try(:authenticate, params[:password])
     if user
         session[:user_id] = user.id
-        # return redirect_to "/"
+        return redirect_to "/ideas"
     else
-        flash[:errors] = ['This Combo will not work']
+        flash[:errors] = ['To To Bad, So Sad. This Combo will not work']
         return redirect_to :back
     end
 end
