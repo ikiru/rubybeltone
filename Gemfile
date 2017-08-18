@@ -29,6 +29,7 @@ gem 'rails-footnotes', '>= 4.0.0', '<5'
 # rails g rails_footnotes:install
 gem 'hirb'
 gem 'simple_form'
+#rails generate simple_form:install
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'validates_timeliness', '~> 4.0'
@@ -43,9 +44,7 @@ gem 'validates_timeliness', '~> 4.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'capybara'
+
 end
 
 group :development do
